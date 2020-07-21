@@ -1,0 +1,10 @@
+---
+applications:
+- name: loan-management-service-pod2-jenkins
+  memory: 2G
+  instances: 1
+  timeout: 120
+  services:
+  - lms-new-relic
+  - lms-autoscalar
+  buildpack: staticfile_buildpack
