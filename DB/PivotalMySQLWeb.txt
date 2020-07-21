@@ -1,2 +1,0 @@
-https://github.com/pivotal-cf/PivotalMySQLWeb
-https://docs.pivotal.io/p-mysql/2-6/tools.html#mysqlweb
