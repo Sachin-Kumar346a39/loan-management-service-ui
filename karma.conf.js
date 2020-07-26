@@ -8,6 +8,7 @@ module.exports = function (config) {
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
+      require('karma-htmlfile-reporter'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
       require('@angular-devkit/build-angular/plugins/karma')
@@ -20,13 +21,25 @@ module.exports = function (config) {
       reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true
     },
-    reporters: ['progress', 'kjhtml'],
+    reporters: ['progress', 'html'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['Chrome'],
     singleRun: false,
-    restartOnFileChange: true
+    restartOnFileChange: true,
+    
+    htmlReporter: {
+    outputFile: 'tests/Results.html',
+    
+    // Optional
+    pageTitle: 'Jasmine Test Results',
+    subPageTitle: 'Loan Management Service Test Results',
+    groupSuites: true,
+    useCompactStyle: true,
+    useLegacyStyle: true,
+    showOnlyFailed: false
+  }
   });
 };
